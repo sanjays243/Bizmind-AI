@@ -1,0 +1,334 @@
+@import "tailwindcss";
+
+/* ─── BizMind AI Design System ────────────────────────────────── */
+/* Font: Inter — professional, readable, FinTech standard          */
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: #F8FAFC;
+    color: #0F172A;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  h1 { font-size: 48px; font-weight: 700; line-height: 56px; }
+  h2 { font-size: 36px; font-weight: 700; line-height: 44px; }
+  h3 { font-size: 24px; font-weight: 600; line-height: 32px; }
+  h4 { font-size: 20px; font-weight: 600; line-height: 28px; }
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #F1F5F9; }
+::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
+
+/* ─── Card Component ─────────────────────────────────────────── */
+/* Standard white card with subtle border — used throughout app   */
+.bm-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.bm-card-hover {
+  transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+.bm-card-hover:hover {
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08), 0 2px 6px rgba(15, 23, 42, 0.06);
+  border-color: #BFDBFE;
+  transform: translateY(-1px);
+}
+
+/* AI Card — light purple tint, purple border */
+.bm-card-ai {
+  background: #F5F3FF;
+  border: 1px solid #DDD6FE;
+  border-radius: 12px;
+}
+
+/* ─── Buttons ─────────────────────────────────────────────────── */
+.bm-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: #2563EB;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+.bm-btn-primary:hover {
+  background: #1D4ED8;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+  transform: translateY(-1px);
+}
+.bm-btn-primary:active { transform: translateY(0); }
+
+.bm-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: #FFFFFF;
+  color: #0F172A;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 1px solid #E2E8F0;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.bm-btn-secondary:hover {
+  background: #F8FAFC;
+  border-color: #CBD5E1;
+}
+
+.bm-btn-ai {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: #7C3AED;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s ease, box-shadow 0.15s ease;
+}
+.bm-btn-ai:hover {
+  background: #6D28D9;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.25);
+}
+
+.bm-btn-success {
+  background: #10B981;
+  color: #FFFFFF;
+}
+.bm-btn-success:hover { background: #059669; }
+
+/* ─── Status / Badge Utilities ───────────────────────────────── */
+.bm-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 20px;
+  border: 1px solid transparent;
+}
+.bm-badge-blue  { background: #EFF6FF; color: #2563EB; border-color: #BFDBFE; }
+.bm-badge-ai    { background: #F5F3FF; color: #7C3AED; border-color: #DDD6FE; }
+.bm-badge-green { background: #ECFDF5; color: #059669; border-color: #A7F3D0; }
+.bm-badge-amber { background: #FFFBEB; color: #D97706; border-color: #FDE68A; }
+.bm-badge-red   { background: #FEF2F2; color: #DC2626; border-color: #FECACA; }
+.bm-badge-navy  { background: #F1F5F9; color: #475569; border-color: #E2E8F0; }
+
+/* ─── Sidebar ─────────────────────────────────────────────────── */
+.bm-sidebar {
+  background: #0F172A;
+  color: #94A3B8;
+}
+.bm-sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #94A3B8;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.bm-sidebar-item:hover {
+  background: rgba(255,255,255,0.06);
+  color: #E2E8F0;
+}
+.bm-sidebar-item.active {
+  background: #1E3A8A;
+  color: #93C5FD;
+}
+.bm-sidebar-item.active svg {
+  color: #60A5FA;
+}
+
+/* ─── Form Inputs ─────────────────────────────────────────────── */
+.bm-input {
+  width: 100%;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #0F172A;
+  font-family: inherit;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  outline: none;
+}
+.bm-input::placeholder { color: #94A3B8; }
+.bm-input:hover { border-color: #CBD5E1; }
+.bm-input:focus {
+  border-color: #2563EB;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+.bm-input.error { border-color: #EF4444; }
+.bm-input.error:focus { box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1); }
+
+.bm-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748B' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+}
+
+/* ─── Section Layout ──────────────────────────────────────────── */
+.bm-section {
+  padding: 80px 0;
+}
+.bm-section-alt {
+  padding: 80px 0;
+  background: #F1F5F9;
+}
+.bm-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ─── Section Labels / Tags ───────────────────────────────────── */
+.bm-section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 20px;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+}
+
+/* ─── Divider ─────────────────────────────────────────────────── */
+.bm-divider {
+  border: none;
+  border-top: 1px solid #E2E8F0;
+  margin: 0;
+}
+
+/* ─── Navbar ──────────────────────────────────────────────────── */
+.bm-navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 50;
+  height: 68px;
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid #E2E8F0;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* ─── Metric Cards ────────────────────────────────────────────── */
+.bm-metric-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+}
+.bm-metric-value {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #0F172A;
+}
+.bm-metric-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #64748B;
+}
+
+/* ─── Status indicator dots ───────────────────────────────────── */
+.bm-dot-blue   { width: 8px; height: 8px; border-radius: 50%; background: #2563EB; }
+.bm-dot-green  { width: 8px; height: 8px; border-radius: 50%; background: #10B981; }
+.bm-dot-amber  { width: 8px; height: 8px; border-radius: 50%; background: #F59E0B; }
+.bm-dot-red    { width: 8px; height: 8px; border-radius: 50%; background: #EF4444; }
+.bm-dot-purple { width: 8px; height: 8px; border-radius: 50%; background: #7C3AED; }
+
+/* ─── AI Insight Stripe ───────────────────────────────────────── */
+.bm-ai-stripe {
+  border-left: 3px solid #7C3AED;
+  padding-left: 12px;
+}
+
+/* ─── Subtle Animations ───────────────────────────────────────── */
+@keyframes bm-fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.bm-fade-in { animation: bm-fade-in 0.3s ease forwards; }
+
+@keyframes bm-pulse-dot {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+.bm-pulse { animation: bm-pulse-dot 2s ease-in-out infinite; }
+
+/* ─── Progress Bar ────────────────────────────────────────────── */
+.bm-progress-track {
+  width: 100%;
+  height: 6px;
+  background: #E2E8F0;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.bm-progress-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.4s ease;
+}
+
+/* ─── Table ───────────────────────────────────────────────────── */
+.bm-table-row {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #F1F5F9;
+  font-size: 13px;
+  transition: background 0.1s ease;
+}
+.bm-table-row:hover { background: #F8FAFC; }
+.bm-table-row:last-child { border-bottom: none; }
+
+/* ─── Alert / Info Boxes ──────────────────────────────────────── */
+.bm-alert-info    { background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 8px; color: #1E40AF; }
+.bm-alert-success { background: #ECFDF5; border: 1px solid #A7F3D0; border-radius: 8px; color: #065F46; }
+.bm-alert-warning { background: #FFFBEB; border: 1px solid #FDE68A; border-radius: 8px; color: #92400E; }
+.bm-alert-danger  { background: #FEF2F2; border: 1px solid #FECACA; border-radius: 8px; color: #991B1B; }
+.bm-alert-ai      { background: #F5F3FF; border: 1px solid #DDD6FE; border-radius: 8px; color: #5B21B6; }
